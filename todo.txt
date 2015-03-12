@@ -1,8 +1,3 @@
 StringToArray method test
-accept only string type
-	exception
-return an array (values)
-	explode it by commas (,) and create and return
-		"a,b,c" 
-		"100,982,444,990,1" 
-		"Mark,Anthony,marka@lib.de"
+explode by NL (\n)
+return a 2 dimensional array (lines, values)
