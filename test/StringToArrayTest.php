@@ -1,8 +1,7 @@
 <?php
 
 namespace Tdd\Test\StringToArray;
-
-use Tdd\StringToArray\StringToArray;
+use Tdd\StringToArray;
 
 class StringToArrayTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,6 +11,11 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	public function testSettings()
 	{
 		$this->assertTrue(true);
+	}
+
+	public function testProcessStringToArrayReturnArray()
+	{
+		$stringToArray = new StringToArray();
 	}
 }
  

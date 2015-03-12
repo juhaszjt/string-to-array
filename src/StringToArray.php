@@ -1,6 +1,6 @@
 <?php
 
-namespace Tdd\StringToArray;
+namespace Tdd;
 
 class StringToArray
 {
