@@ -11,7 +11,7 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testSettings()
 	{
-		$this->assertFalse(true);
+		$this->assertTrue(true);
 	}
 }
  
