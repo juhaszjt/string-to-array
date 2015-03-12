@@ -16,6 +16,8 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	public function testProcessStringToArrayReturnArray()
 	{
 		$stringToArray = new StringToArray();
+
+		$this->assertNotNull($stringToArray->processStringToArray());
 	}
 }
  
