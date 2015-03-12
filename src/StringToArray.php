@@ -15,6 +15,8 @@ class StringToArray
 			throw new \InvalidArgumentException('InvalidArgumentException');
 		}
 
-		return array();
+		$exploded = explode(',', $inputString);
+
+		return $exploded;
 	}
 }

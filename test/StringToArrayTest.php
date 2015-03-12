@@ -43,5 +43,12 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 			)
 		);
 	}
+
+	public function testProcessStringToArrayReturnArrayValue()
+	{
+		$stringToArray = new StringToArray();
+
+		$this->assertEquals(array('a', 'b', 'c'), $stringToArray->processStringToArray('a,b,c'));
+	}
 }
  
