@@ -4,8 +4,17 @@ namespace Tdd;
 
 class StringToArray
 {
-	public function processStringToArray()
+	/**
+	 * @param string $inputString
+	 * @return array
+	 */
+	public function processStringToArray($inputString = '')
 	{
+		if (!is_string($inputString))
+		{
+			throw new \InvalidArgumentException('InvalidArgumentException');
+		}
+
 		return array();
 	}
 }

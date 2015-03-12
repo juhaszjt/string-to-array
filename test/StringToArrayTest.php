@@ -19,5 +19,15 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 
 		$this->assertNotNull($stringToArray->processStringToArray());
 	}
+
+	/**
+	 * @expectedException \InvalidArgumentException
+	 */
+	public function testProcessStringToArrayAcceptOnlyStringReturnException()
+	{
+		$stringToArray = new StringToArray();
+
+		$this->assertNotNull($stringToArray->processStringToArray(9));
+	}
 }
  
