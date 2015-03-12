@@ -21,6 +21,9 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Test non string exception
+	 *
+	 * @dataProvider testProcessStringToArrayAcceptOnlyStringReturnExceptionDataProvider
 	 * @expectedException \InvalidArgumentException
 	 */
 	public function testProcessStringToArrayAcceptOnlyStringReturnException()
@@ -28,6 +31,17 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 		$stringToArray = new StringToArray();
 
 		$this->assertNotNull($stringToArray->processStringToArray(9));
+	}
+
+	public function testProcessStringToArrayAcceptOnlyStringReturnExceptionDataProvider()
+	{
+		return array(
+			array(
+				array(4),
+				array(true),
+				array(new \stdClass),
+			)
+		);
 	}
 }
  
