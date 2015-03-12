@@ -5,6 +5,18 @@ use Tdd\StringToArray;
 
 class StringToArrayTest extends \PHPUnit_Framework_TestCase
 {
+	private $stringToArray;
+
+	public function setUp()
+	{
+		$this->stringToArray = new StringToArray();
+	}
+
+	public function tearDown()
+	{
+		unset($this->stringToArray);
+	}
+
 	/**
 	 * Test settings
 	 */
@@ -15,9 +27,7 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 
 	public function testProcessStringToArrayReturnArray()
 	{
-		$stringToArray = new StringToArray();
-
-		$this->assertNotNull($stringToArray->processStringToArray());
+		$this->assertNotNull($this->stringToArray->processStringToArray());
 	}
 
 	/**
@@ -28,9 +38,7 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testProcessStringToArrayAcceptOnlyStringReturnException()
 	{
-		$stringToArray = new StringToArray();
-
-		$this->assertNotNull($stringToArray->processStringToArray(9));
+		$this->assertNotNull($this->stringToArray->processStringToArray(9));
 	}
 
 	public function testProcessStringToArrayAcceptOnlyStringReturnExceptionDataProvider()
@@ -49,11 +57,9 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testProcessStringToArrayReturnArrayValue(array $input)
 	{
-		$stringToArray = new StringToArray();
-
 		list($expected, $actualParam) = $input;
 
-		$this->assertEquals($expected, $stringToArray->processStringToArray($actualParam));
+		$this->assertEquals($expected, $this->stringToArray->processStringToArray($actualParam));
 	}
 
 	public function testProcessStringToArrayReturnArrayValueDataProvider()
