@@ -15,8 +15,14 @@ class StringToArray
 			throw new \InvalidArgumentException('InvalidArgumentException');
 		}
 
-		$exploded = explode(',', $inputString);
+		$explodedEnter = explode("\n", $inputString);
 
-		return $exploded;
+		$returnValue = array();
+
+		foreach($explodedEnter as $oneExplodedEnter)
+		{
+			$returnValue[] = explode(',', $oneExplodedEnter);
+		}
+		return $returnValue;
 	}
 }

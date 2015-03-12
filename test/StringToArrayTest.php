@@ -66,11 +66,16 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 	{
 		return array(
 			array(
-				array(array('a', 'b', 'c'), 'a,b,c'),
-				array(array('100', '982', '444', '990' , '1'), '100,982,444,990,1'),
-				array(array('Mark', 'Anthony', 'marka@lib.de'), 'Mark,Anthony,marka@lib.de'),
+				array(array(0 => array('a', 'b', 'c')), 'a,b,c'),
+				array(array(0 => array('100', '982', '444', '990' , '1')), '100,982,444,990,1'),
+				array(array(0 => array('Mark', 'Anthony', 'marka@lib.de')), 'Mark,Anthony,marka@lib.de'),
 			)
 		);
+	}
+
+	public function testProcessStringToArrayMultiLineInputString()
+	{
+		$this->assertEquals(array(0 => array(211,22,35), 1 => array(10,20,33)), $this->stringToArray->processStringToArray("211,22,35\n10,20,33"));
 	}
 }
  
