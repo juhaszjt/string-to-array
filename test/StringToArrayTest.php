@@ -44,11 +44,27 @@ class StringToArrayTest extends \PHPUnit_Framework_TestCase
 		);
 	}
 
-	public function testProcessStringToArrayReturnArrayValue()
+	/**
+	 * @dataProvider testProcessStringToArrayReturnArrayValueDataProvider
+	 */
+	public function testProcessStringToArrayReturnArrayValue(array $input)
 	{
 		$stringToArray = new StringToArray();
 
-		$this->assertEquals(array('a', 'b', 'c'), $stringToArray->processStringToArray('a,b,c'));
+		list($expected, $actualParam) = $input;
+
+		$this->assertEquals($expected, $stringToArray->processStringToArray($actualParam));
+	}
+
+	public function testProcessStringToArrayReturnArrayValueDataProvider()
+	{
+		return array(
+			array(
+				array(array('a', 'b', 'c'), 'a,b,c'),
+				array(array('100', '982', '444', '990' , '1'), '100,982,444,990,1'),
+				array(array('Mark', 'Anthony', 'marka@lib.de'), 'Mark,Anthony,marka@lib.de'),
+			)
+		);
 	}
 }
  
